@@ -52,8 +52,8 @@ app.post('/addProduct', urlEncoded,function(req,res)
  {  
   
     const newproduct=product4['product4']
-    newproduct['pname']=req.body.pname
-    newproduct['coll']=req.body.coll
+    newproduct['name']=req.body.name
+    newproduct['collection']=req.body.coll
     newproduct['room']=req.body.room
     newproduct['section']=req.body.section
        res.send(newproduct)
