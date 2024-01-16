@@ -1,13 +1,13 @@
-var http=require('http')
-var express =require('express');
-var app = express();
-var fs = require('fs');
-
+var http=require('http') 
+var express=require('express')
+var app =express()
+var myfs= require("fs")
 var body=require('body-parser')
+var urlEncoded=body.urlencoded({extended:false})
+app.use(express.static("public"))
 
-var urlEncodded=body.urlencoded({extended:false})
-
-app.use(express.static('public'))
+const path='product.json'
+const products=require('./products.json')
 
 var product4={"product 4":{
     "name":"Glass Straw",
@@ -35,6 +35,30 @@ app.get('/products',function(req,res)
     res.json(products)
 
 })
+
+//Request a product 
+app.post('/requestProduct', urlEncoded,(req,res)=>
+ { 
+    
+    const pname=req.body.pname
+    const coll =req.body.coll
+    const room=req.body.room
+    const section=req.body.section
+    res.json({message:"Product request submitted successfully"})
+
+})
+// Add a new product
+app.post('/addProduct', urlEncoded,function(req,res)
+ {  
+  
+    const newproduct=product4['product4']
+    newproduct['pname']=req.body.pname
+    newproduct['coll']=req.body.coll
+    newproduct['room']=req.body.room
+    newproduct['section']=req.body.section
+       res.send(newproduct)
+})
+
 
 var server = app.listen(9000, function () {
     var host = server.address().address
