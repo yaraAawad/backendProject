@@ -1,0 +1,23 @@
+{
+    "product 1":{
+        "name":"Ginger-man mug",
+        "collection":"mug",
+        "room":"kitchen",
+        "section":"Home",
+        "product_id":"1"
+    },
+    "product 2":{
+        "name":"Ginger-man mug",
+        "collection":"mug",
+        "room":"kitchen",
+        "section":"Home",
+        "product_id":"2"
+    },
+    "product 3":{
+        "name":"Ginger-man mug",
+        "collection":"mug",
+        "room":"kitchen",
+        "section":"Home",
+        "product_id":"3"
+    }
+}
